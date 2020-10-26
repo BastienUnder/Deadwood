@@ -5,6 +5,7 @@ public class Room{
 	private String name;
 	private ArrayList<Role> roles;
 	private ArrayList<Room> adjacentRooms;
+	private SceneRoom sceneCard;
 	
 	public Room() {
 		
@@ -14,8 +15,9 @@ public class Room{
 	public Room(String name, int shots, ArrayList<Role> roles) {
 		
 		this.name = name; 
-		this.shots = shots; 
-		roles = new ArrayList<Role>(); 
+		this.shots = shots;
+		this.roles = roles;
+		//roles = new ArrayList<Role>();
 	}
 	
 	public String getName() {
@@ -32,21 +34,13 @@ public class Room{
 		
 		return adjacentRooms;
 	}
+
+	public ArrayList<Role> getRoles(){
+		return roles;
+	}
 	
 	
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

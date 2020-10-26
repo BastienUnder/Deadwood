@@ -4,12 +4,14 @@ public class Role {
 	private int rank;
 	private String name;
 	private boolean card;
+	private boolean occupied;
 	
 	public Role(String name, int rank, boolean card) {
 		
 		this.name = name;
 		this.rank = rank;
 		this.card = card;
+		occupied = false;
 	}
 	
 	public String getName() {
@@ -26,11 +28,12 @@ public class Role {
 		
 		
 	}
+
+	public boolean getOccupied(){
+		return occupied;
+	}
 	
 	
 	
 
 }
-
-
-
