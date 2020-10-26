@@ -1,14 +1,14 @@
-public class Main{
+public class Deadwood{
 
   Game game = new Game();
 
-  public Main(){
+  public Deadwood(){
 
      game.startGame();
   }
 
   public static void main(String[] args){
   
-      new Main();
+      new Deadwood();
   }
 }
