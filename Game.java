@@ -2,9 +2,7 @@ import java.util.*;
 
 public class Game {
 
-	public static Map<String, Room> rooms = new HashMap<String, Room>();
-	public Scanner scanner = new Scanner(System.in);
-	
+	public Scanner scanner = new Scanner(System.in); 
 	public boolean gameRunning = true;
 	public int daysLeft = 4;
 	
@@ -34,11 +32,14 @@ public class Game {
 				
 				actions.availableActions(players.get(i), option);
 				
-				
 			} 
 		}
+	}
+	
+	public void calculateScore() {
 		
-
+		
+		
 	}
 	
 	
