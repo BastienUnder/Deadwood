@@ -291,67 +291,67 @@ public class SetBoard extends Room{
 	
 	public void setRooms() {
 		
-		Room trailers = new Room("Trailers", 0, new ArrayList<Role>()); 
-		Room castingOffice = new Room("Casting Office", 0, new ArrayList<Role>());
+		Room trailers = new Room("Trailers"); 
+		Room castingOffice = new Room("Casting Office");
 		
 		ArrayList<Role> mainStreetRoles = new ArrayList<Role>();
 		mainStreetRoles.add(new Role("Mayor McGinty", 4, false));
 		mainStreetRoles.add(new Role("Falls off Roof", 2, false));
 		mainStreetRoles.add(new Role("Railroad Worker", 1, false));
 		mainStreetRoles.add(new Role("Woman in Black Dress", 2, false));
-		Room mainStreet = new Room("Main Street", 4, mainStreetRoles);
+		SceneRoom mainStreet = new SceneRoom("Main Street", 4, mainStreetRoles);
 		
 		ArrayList<Role> saloonRoles = new ArrayList<Role>();
 		saloonRoles.add(new Role("Reluctant Farmer", 1, false));
 		saloonRoles.add(new Role("Woman in Red Dress", 2, false));
-		Room saloon = new Room("Saloon", 2, saloonRoles);
+		SceneRoom saloon = new SceneRoom("Saloon", 2, saloonRoles);
 		
 		ArrayList<Role> jailRoles = new ArrayList<Role>();
 		jailRoles.add(new Role("Feller in Irons", 3, false));
 		jailRoles.add(new Role("Prisoner in Cell", 2, false));
-		Room jail = new Room("Jail", 2, jailRoles);
+		SceneRoom jail = new SceneRoom("Jail", 2, jailRoles);
 		
 		ArrayList<Role> generalStoreRoles = new ArrayList<Role>();
 		generalStoreRoles.add(new Role("Mister Keach", 3, false));
 		generalStoreRoles.add(new Role("Main in Overalls", 1, false));
-		Room generalStore = new Room("General Store", 2, generalStoreRoles);
+		SceneRoom generalStore = new SceneRoom("General Store", 2, generalStoreRoles);
 		
 		ArrayList<Role> trainStationRoles = new ArrayList<Role>();
 		trainStationRoles.add(new Role("Dragged by Train", 1, false));
 		trainStationRoles.add(new Role("Preacher with Bag", 2, false));
 		trainStationRoles.add(new Role("Crusty Prospector", 1, false));
 		trainStationRoles.add(new Role("Gyrus the Gunfighter", 4, false));
-		Room trainStation = new Room("Train Station", 4, trainStationRoles);
+		SceneRoom trainStation = new SceneRoom("Train Station", 4, trainStationRoles);
 		
 		ArrayList<Role> hotelRoles = new ArrayList<Role>();
 		hotelRoles.add(new Role("Sleeping Drunkard", 1, false));
 		hotelRoles.add(new Role("Faro Player", 1, false));
 		hotelRoles.add(new Role("Falls from Balcony", 2, false));
 		hotelRoles.add(new Role("Australian Bartender", 3, false));
-		Room hotel = new Room("Hotel", 4, hotelRoles);
+		SceneRoom hotel = new SceneRoom("Hotel", 4, hotelRoles);
 		
 		ArrayList<Role> churchRoles = new ArrayList<Role>();
 		churchRoles.add(new Role("Dead Man", 1, false));
 		churchRoles.add(new Role("Crying Woman", 2, false));
-		Room church = new Room("Church", 2, churchRoles);
+		SceneRoom church = new SceneRoom("Church", 2, churchRoles);
 		
 		ArrayList<Role> bankRoles = new ArrayList<Role>();
 		bankRoles.add(new Role("Flustered Teller", 3, false));
 		bankRoles.add(new Role("Suspicious Gentleman", 2, false));
-		Room bank = new Room("Bank", 2, bankRoles);
+		SceneRoom bank = new SceneRoom("Bank", 2, bankRoles);
 		
 		ArrayList<Role> ranchRoles = new ArrayList<Role>();
 		ranchRoles.add(new Role("Shot in Leg", 1, false));
 		ranchRoles.add(new Role("Saucy Fred", 2, false));
 		ranchRoles.add(new Role("Man Under Horse", 3, false));
-		Room ranch = new Room("Ranch", 3, ranchRoles);
+		SceneRoom ranch = new SceneRoom("Ranch", 3, ranchRoles);
 		
 		ArrayList<Role> hideoutRoles = new ArrayList<Role>();
 		hideoutRoles.add(new Role("Clumsy Pit Fighter", 1, false));
 		hideoutRoles.add(new Role("Thug with Knife", 2, false));
 		hideoutRoles.add(new Role("Dangerous Tom", 3, false));
 		hideoutRoles.add(new Role("Penny, who is Lost", 4, false));
-		Room secretHideout = new Room("Hideout", 4, hideoutRoles);
+		SceneRoom secretHideout = new SceneRoom("Hideout", 4, hideoutRoles);
 		
 		rooms.put("Jail", jail);
 		rooms.put("Bank", bank);
@@ -395,7 +395,7 @@ public class SetBoard extends Room{
 		adjacentTrainStationRooms.add(jail);
 		adjacentTrainStationRooms.add(generalStore);
 		adjacentTrainStationRooms.add(castingOffice);
-		rooms.get("Train Station").setAdjacentRooms(adjacentTrainStationRooms);
+		rooms.get("Casting Office").setAdjacentRooms(adjacentTrainStationRooms);
 		
 		ArrayList<Room> adjacentGeneralStoreRooms = new ArrayList<Room>();
 		adjacentGeneralStoreRooms.add(trainStation);
@@ -444,18 +444,30 @@ public class SetBoard extends Room{
 	}
 	
 	
-	public void getCards() { 
+	public void resetBoard() {
 		
-		
-		
-		
-	} 
+	}
 	
+	public void initializeCards() {
+		
+	}
+	
+	public void pickCards() {
+		
+		
+	}
 	
 	public Map<String, Room> getRooms(){
 		
 		return rooms;
 	}
+	
+	public ArrayList<Card> getCards(){
+		
+		return cards;
+	}
+	
+	
 	
 	
 	
