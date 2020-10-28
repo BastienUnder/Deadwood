@@ -1,28 +1,27 @@
 import java.util.*;
 public class Room{
 	
-	private int shots;
-	private String name;
-	private ArrayList<Role> roles;
-	private ArrayList<Room> adjacentRooms;
-	private SceneRoom sceneCard;
+	private int shots; 
+	private String name; 
+	private ArrayList<Room> adjacentRooms; 
 	
-	public Room() {
-		
+	public Room() { 
 		
 	}
 	
-	public Room(String name, int shots, ArrayList<Role> roles) {
+	public Room(String name) {
 		
-		this.name = name; 
-		this.shots = shots;
-		this.roles = roles;
-		//roles = new ArrayList<Role>();
+		this.name = name;
 	}
 	
 	public String getName() {
 		
 		return name;
+	}
+	
+	public int getShotTokens() {
+		
+		return shots;
 	}
 	
 	public void setAdjacentRooms(ArrayList<Room> adjacentRooms) {
@@ -34,13 +33,21 @@ public class Room{
 		
 		return adjacentRooms;
 	}
-
-	public ArrayList<Role> getRoles(){
-		return roles;
-	}
 	
 	
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
