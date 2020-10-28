@@ -1,36 +1,45 @@
 import java.util.*;
-public class SceneRoom {
+public class SceneRoom extends Room{
+	
+	private Card card;
+	private int shots;
+	private String name; 
+	private ArrayList<Role> roles; 
+	
+	public SceneRoom(String name, int shots, ArrayList<Role> roles) {
+		
+		this.name = name; 
+		this.shots = shots;
+		roles = new ArrayList<Role>(); 
+	}
+	
+	public void dislayRoles() {
+		
+		
+	}
+	
+	public Card getCard() {
+		
+		return card;
+	}
+	
+	public String getName() {
+		
+		return name;
+	}
+	
+	public int getShotTokens() {
+		
+		return shots;
+	}
+	
+	public ArrayList<Role> getRoles(){
+		
+		return roles;
+	}
+	
+	
 
-    private String name;
-    private int budget;
-    private ArrayList<Role> sceneRoles;
-    private boolean beenUsed;
-
-    public SceneRoom(String name, int budget, ArrayList<Role> sceneRoles) {
-        this.name = name;
-        this.budget = budget;
-        this.sceneRoles = sceneRoles;
-        beenUsed = false;
-    }
-
-
-    public void wrapScene(){
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getBudget() {
-        return budget;
-    }
-
-
-
-    public ArrayList<Role> getSceneRoles() {
-        return sceneRoles;
-    }
 }
 
 
