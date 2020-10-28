@@ -35,33 +35,6 @@ public class Action {
 		
 		System.out.println(player.getName() + "'s position is " + player.getRoom().getName()); 
 	}
-
-	public void activePlayer(){
-
-	}
-
-
-	public void work(){
-
-	}
-
-	public void upgrade(){
-
-	}
-
-	public void act(){
-
-	}
-
-	public void rehearse(){
-
-	}
-
-	public void endTurn(){
-
-	}
-
-
 	
 	public void availableActions(Player player, String option) {
 		
@@ -110,13 +83,29 @@ public class Action {
 				}
 			}
 		}
-		
-
 	}
-
-
-
-
+	
+	public void work(Player player) {
+		
+		
+	}
+	
+	public void act(Player player) {
+		
+		
+	}
+	
+	public void rehearse(Player player) {
+		
+		
+	}
+	
+	public void upgrade(Player player) {
+		
+		
+	}
+	
+	
 	
 	
 	
