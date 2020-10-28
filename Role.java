@@ -1,39 +1,68 @@
-import java.util.*;
-public class Role {
+
+public class Role { 
 	
 	private int rank;
 	private String name;
-	private boolean card;
-	private boolean occupied;
+	private boolean card; 
+	private boolean taken; 
 	
 	public Role(String name, int rank, boolean card) {
 		
 		this.name = name;
 		this.rank = rank;
 		this.card = card;
-		occupied = false;
 	}
 	
-	public String getName() {
+	public void setName(String name) {
+		
+		this.name = name;
+	}
+	
+	public String getName() { 
 		
 		return name;
 	}
 	
-	public void checkRole(int dice) {
+	public void setTaken(boolean taken) {
 		
+		this.taken = taken; 
+	}
+	
+	public boolean isTaken() {
 		
+		return taken;
+	}
+	
+	public void setCard(boolean card) {
+		
+		this.card = card;
+	}
+	
+	public boolean onCard() {
+		
+		return card;
+	}
+	
+	public void setRank(int rank) {
+		
+		this.rank = rank;
+	}
+	
+	public int getRank() {
+		
+		return rank;
 	}
 	
 	public void setDiceRolls(int currentRoll) {
 		
 		
 	}
-
-	public boolean getOccupied(){
-		return occupied;
+	
+	public void distributeBonusMoney() {
+		
+		
 	}
-	
-	
-	
-
 }
+
+
+
