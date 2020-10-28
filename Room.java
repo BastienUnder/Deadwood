@@ -1,25 +1,14 @@
 import java.util.*;
-public class Room{
-	
-	private int shots;
+public abstract class Room{
+
 	private String name;
-	private ArrayList<Role> roles;
 	private ArrayList<Room> adjacentRooms;
-	private SceneRoom sceneCard;
-	
+
 	public Room() {
 		
 		
 	}
-	
-	public Room(String name, int shots, ArrayList<Role> roles) {
-		
-		this.name = name; 
-		this.shots = shots;
-		this.roles = roles;
-		//roles = new ArrayList<Role>();
-	}
-	
+
 	public String getName() {
 		
 		return name;
@@ -35,9 +24,6 @@ public class Room{
 		return adjacentRooms;
 	}
 
-	public ArrayList<Role> getRoles(){
-		return roles;
-	}
 	
 	
 	

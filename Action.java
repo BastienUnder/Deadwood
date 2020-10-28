@@ -81,7 +81,7 @@ public class Action {
 		
 		else if(optionArray[0].equals("who")) { 
 			
-			System.out.println(player.getName() + " has $" + player.getMoney() + " and " + player.getCredits() + " credits.");
+			System.out.println(player.getName() + " has $" + player.getDollars() + " and " + player.getCredits() + " credits.");
 			System.out.println("Player rank is " + player.getRank());
 			
 			if(player.isWorking()) {

@@ -1,12 +1,12 @@
 import java.util.*;
-public class SceneRoom {
+public class Scene {
 
     private String name;
     private int budget;
     private ArrayList<Role> sceneRoles;
     private boolean beenUsed;
 
-    public SceneRoom(String name, int budget, ArrayList<Role> sceneRoles) {
+    public Scene(String name, int budget, ArrayList<Role> sceneRoles) {
         this.name = name;
         this.budget = budget;
         this.sceneRoles = sceneRoles;

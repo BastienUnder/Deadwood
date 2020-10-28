@@ -1,39 +1,37 @@
 import java.util.*;
 public class Role {
-	
-	private int rank;
+
 	private String name;
-	private boolean card;
+	private int roleRank;
+	private boolean onCard;
 	private boolean occupied;
 	
-	public Role(String name, int rank, boolean card) {
-		
+	public Role(String name, int rank, boolean onCard) {
 		this.name = name;
-		this.rank = rank;
-		this.card = card;
+		this.roleRank = rank;
+		this.onCard = onCard;
 		occupied = false;
 	}
 	
 	public String getName() {
-		
 		return name;
 	}
-	
-	public void checkRole(int dice) {
-		
-		
-	}
-	
-	public void setDiceRolls(int currentRoll) {
-		
-		
+
+	public int getRoleRank() {
+		return roleRank;
 	}
 
-	public boolean getOccupied(){
+	public boolean isOnCard() {
+		return onCard;
+	}
+
+	public boolean isOccupied() {
 		return occupied;
 	}
+
+	//public void checkRole(int dice) { }
 	
-	
-	
+	//public void setDiceRolls(int currentRoll) { }
+
 
 }
