@@ -15,7 +15,6 @@ public class Role {
 	}
 	
 	public String getName() {
-		
 		return name;
 	}
 
@@ -33,6 +32,8 @@ public class Role {
 		
 		return occupied;
 	}
+
+	//public void checkRole(int dice) { }
 	
 	public void takeRole(boolean occupied) {
 		
