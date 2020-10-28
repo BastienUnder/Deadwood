@@ -83,11 +83,12 @@ public class Game {
 					System.out.println("Not a valid number of players.");
 			}
 		}
-		
+
+		//Create PLayer Objects.
 		for(int i = 0; i < numberOfPlayers; i++) {
 			
 			players.add(new Player("Player " + (i + 1), 
-					board.getRooms().get("Trailers"), startingRank, startingCredits, 0));
+					board.getRooms().get("Trailer"), startingRank, startingCredits, 0));
 		}
 	}
 	

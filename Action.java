@@ -8,6 +8,8 @@ public class Action {
 		ArrayList<Room> adjacentRooms = player.getRoom().getAdjacentRooms(); 
 		
 		if(roomName.equals("")) {
+
+			//System.out.println("Adjacent rooms: " + );
 			
 			System.out.println("Available move options: ");
 			for(int i = 0; i < adjacentRooms.size(); i++) {

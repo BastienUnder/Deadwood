@@ -1,34 +1,24 @@
 import java.util.ArrayList;
 
 public class Set extends Room{
-    private String name;
     private ArrayList<Role> roles;
-    private ArrayList<String> adjacentRooms;
     private Scene sceneCard;
     private int shotCount;
 
-    public Set(ArrayList<String> adjacentRooms){
-        this.adjacentRooms = adjacentRooms;
+    public Set(String name, ArrayList<String> adjacentRoomNames){
+        setName(name);
+        setAdjacentRoomNames(adjacentRoomNames);
     }
 
-    //GOING to need to add hash functionality to adjacentRooms to get the
-    //actual object from the String list.
-
-    public Set(String name, int shotCount, ArrayList<Role> roles, ArrayList<String> adjacentRooms) {
-        this.name = name;
+    public Set(String name, int shotCount, ArrayList<Role> roles, ArrayList<String> adjacentRoomNames) {
+        setName(name);
+        setAdjacentRoomNames(adjacentRoomNames);
         this.shotCount = shotCount;
         this.roles = roles;
-        this.adjacentRooms = adjacentRooms;
+
     }
 
     //Getters and Setters
-    public String getName() {
-
-        return name;
-    }
-
-    //public ArrayList<Room> getAdjacentRooms(){ return adjacentRooms; }
-
     public ArrayList<Role> getRoles(){
 
         return roles;
