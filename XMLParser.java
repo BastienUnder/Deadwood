@@ -127,6 +127,7 @@ public class XMLParser {
         Node trailerNode = trailerRoom.item(0);
         NodeList trailerChildren = trailerNode.getChildNodes();
         NodeList trailerNeighbors = trailerChildren.item(1).getChildNodes();
+        String trailerName = "Trailer";
 
         for(int i=0; i<trailerNeighbors.getLength();i++){
             Node tNeighbor = trailerNeighbors.item(i);
@@ -136,7 +137,7 @@ public class XMLParser {
             }
 
         }
-        Set newSet = new Set(neighbors);
+        Set newSet = new Set(trailerName, neighbors);
         rooms.add(newSet);
 
         //CREATE CASTING OFFICE
@@ -157,7 +158,7 @@ public class XMLParser {
                     Node neighborsNode = officeNeighborNodes.item(k);
 
                     if("neighbor".equals(neighborsNode.getNodeName())){
-                        neighbors.add(neighborsNode.getAttributes().getNamedItem("name").getNodeValue());
+                        officeNeighbors.add(neighborsNode.getAttributes().getNamedItem("name").getNodeValue());
                     }
 
 
@@ -190,65 +191,51 @@ public class XMLParser {
 
 
 
-    public void readCardsData(Document d){
-
-
-    }// end readCardsData()
-
-    // reads data from XML file and prints data
-    public void readBookData(Document d){
-
+    public ArrayList<Scene> readCardsData(Document d){
         Element root = d.getDocumentElement();
+        ArrayList<Scene> scenes = new ArrayList<>();
 
-        NodeList books = root.getElementsByTagName("book");
 
-        for (int i=0; i<books.getLength();i++){
 
-            System.out.println("Printing information for book "+(i+1));
+        NodeList sceneNodes = root.getElementsByTagName("card");
 
-            //reads data from the nodes
-            Node book = books.item(i);
-            String bookCategory = book.getAttributes().getNamedItem("category").getNodeValue();
-            System.out.println("Category = "+bookCategory);
+        //Iterate through each scene card and create each Scene.java object.
+        for(int i=0; i<sceneNodes.getLength();i++) {
+            //Parameters to create new Scene.java objects out of this data.
+            Node sceneNode = sceneNodes.item(i);
+            String name = sceneNode.getAttributes().getNamedItem("name").getNodeValue();
+            int budget = Integer.parseInt(sceneNode.getAttributes().getNamedItem("budget").getNodeValue());
+            ArrayList<Role> sceneRoles = new ArrayList<>();
 
-            //reads data
+            NodeList children = sceneNode.getChildNodes();
 
-            NodeList children = book.getChildNodes();
-
-            for (int j=0; j< children.getLength(); j++){
+            //Iterate through SCENE and PART data.
+            for (int j=0; j< children.getLength(); j++) {
 
                 Node sub = children.item(j);
 
-                if("title".equals(sub.getNodeName())){
-                    String bookLanguage = sub.getAttributes().getNamedItem("lang").getNodeValue();
-                    System.out.println("Language = "+bookLanguage);
-                    String title = sub.getTextContent();
-                    System.out.println("Title = "+title);
+                //Create each Role.java object on this scene card.
+                if ("part".equals(sub.getNodeName())) {
+                    String roleName = sub.getAttributes().getNamedItem("name").getNodeValue();
+                    int level = Integer.parseInt(sub.getAttributes().getNamedItem("level").getNodeValue());
 
+                    sceneRoles.add(new Role(roleName, level, true));
+                    //System.out.println(roleName + " " + level);
                 }
 
-                else if("author".equals(sub.getNodeName())){
-                    String authorName = sub.getTextContent();
-                    System.out.println(" Author = "+authorName);
+                //Get the Scene description and (and could get Scene number if needed).
+                //else if ("scene".equals(sub.getNodeName())) {//FOR Text based iteration of Deadwood we don't need the description or scene number.}
+            }
 
-                }
-                else if("year".equals(sub.getNodeName())){
-                    String yearVal = sub.getTextContent();
-                    System.out.println(" Publication Year = "+yearVal);
+            //System.out.println(name + " " + budget);
 
-                }
-                else if("price".equals(sub.getNodeName())){
-                    String priceVal = sub.getTextContent();
-                    System.out.println(" Price = "+priceVal);
+            //Create each new Scene.java object and add it to the scenes list.
+            scenes.add(new Scene(name, budget, sceneRoles));
 
-                }
+        }
 
+        return scenes;
 
-            } //for childnodes
+    }// end readCardsData()
 
-            System.out.println("\n");
-
-        }//for book nodes
-
-    }// end readData()
 }
