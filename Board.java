@@ -35,11 +35,14 @@ public class Board extends Room{
 				Room tempRoom = roomsList.get(i);
 				ArrayList<Room> adjacentRooms = new ArrayList<>();
 
-				System.out.println("Room name:                                     " + tempRoom.getName());
+				//System.out.println("Room name:                " + tempRoom.getName());
 
 				for(int j=0; j< tempRoom.getAdjacentRoomNames().size(); j++){
 					String tempRoomName = tempRoom.getAdjacentRoomNames().get(j);
 					adjacentRooms.add(rooms.get(tempRoomName));
+
+					//TEST
+					//System.out.println("Adjacent Rooms: " + adjacentRooms.get(j).getName());
 
 				}
 				tempRoom.setAdjacentRooms(adjacentRooms);

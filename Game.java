@@ -35,12 +35,15 @@ public class Game {
 				for (int i = 0; i < players.size(); i++) {
 
 					System.out.println("\n" + players.get(i).getName() + "'s turn");
-					String option = scanner.nextLine();
 
-					actions.availableActions(players.get(i), option);
 
-					//Check board to see how many scenes are left, if only one end the day, or maybe let board reset dayOver when it sees that the 2nd to last scene has wrapped.
+					while(!(actions.isEndTurn())) {//end turn is false continue player's turn, player entering "end" will end their turn.
+						String option = scanner.nextLine();
+						actions.availableActions(players.get(i), option);
 
+						//Check board to see how many scenes are left, if only one end the day, or maybe let board reset dayOver when it sees that the 2nd to last scene has wrapped.
+					}
+					actions.setEndTurn(false);
 
 				}
 			}
@@ -88,7 +91,7 @@ public class Game {
 		for(int i = 0; i < numberOfPlayers; i++) {
 			
 			players.add(new Player("Player " + (i + 1), 
-					board.getRooms().get("Trailer"), startingRank, startingCredits, 0));
+					board.getRooms().get("trailer"), startingRank, startingCredits, 0));
 		}
 	}
 	

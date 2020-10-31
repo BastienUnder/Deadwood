@@ -127,7 +127,7 @@ public class XMLParser {
         Node trailerNode = trailerRoom.item(0);
         NodeList trailerChildren = trailerNode.getChildNodes();
         NodeList trailerNeighbors = trailerChildren.item(1).getChildNodes();
-        String trailerName = "Trailer";
+        String trailerName = "trailer";
 
         for(int i=0; i<trailerNeighbors.getLength();i++){
             Node tNeighbor = trailerNeighbors.item(i);

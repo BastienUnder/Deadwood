@@ -4,7 +4,7 @@ public class CastingOffice extends Room{
     private ArrayList<Upgrade> upgrades;
 
     public CastingOffice(ArrayList<String> adjacentRoomNames, ArrayList<Upgrade> upgrades) {
-        setName("Casting Office");
+        setName("office");
         setAdjacentRoomNames(adjacentRoomNames);
         this.upgrades = upgrades;
 
