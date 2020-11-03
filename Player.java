@@ -1,28 +1,28 @@
 
 public class Player {
 
+	private String name;
 	private Room room;
 	private boolean turn;
 	private boolean working;
 	private boolean moved;
-	
-	private String name;
-	
+
 	private int rank;
-	private int money;
+	private int dollars;
 	private int credits;
 	
 	private Role role;
 	
-	public Player(String name, Room room, int rank, int credits, int money) {
+	public Player(String name, Room room, int rank, int credits, int dollars) {
 
 		this.name = name;
 		this.room = room;
 		this.rank = rank;
-		this.money = money;
+		this.dollars = dollars;
 		this.credits = credits;
 	}
-	
+
+	//Getters and Setters
 	public void setPosition(Room room) {
 		
 		this.room = room;
@@ -72,17 +72,17 @@ public class Player {
 		
 		return credits;
 	}
-	
-	public void setMoney(int money) {
+
+	public int getDollars() {
 		
-		this.money = money;
+		return dollars;
 	}
-	
-	public int getMoney() {
+
+	public void setDollars(int dollars) {
 		
-		return money;
+		this.dollars = dollars;
 	}
-	
+
 	public void setRank(int rank) {
 		
 		this.rank = rank;
@@ -108,7 +108,10 @@ public class Player {
 		return name;
 	}
 	
-	
+	public void freeRole() {
+		
+		role = null;
+	}
 	
 	
 }
