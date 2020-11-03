@@ -1,68 +1,51 @@
 
-public class Role { 
-	
-	private int rank;
+public class Role {
+
 	private String name;
-	private boolean card; 
-	private boolean taken; 
+	private int roleRank;
+	private boolean onCard;
+	private boolean occupied;
+	private Player player;
 	
-	public Role(String name, int rank, boolean card) {
-		
+	public Role(String name, int rank, boolean onCard) {
 		this.name = name;
-		this.rank = rank;
-		this.card = card;
+		this.roleRank = rank;
+		this.onCard = onCard;
+		occupied = false;
 	}
 	
-	public void setName(String name) {
-		
-		this.name = name;
-	}
-	
-	public String getName() { 
+	public String getName() {
 		
 		return name;
 	}
-	
-	public void setTaken(boolean taken) {
+
+	public int getRoleRank() {
 		
-		this.taken = taken; 
+		return roleRank;
+	}
+
+	public boolean isOnCard() {
+		
+		return onCard;
+	}
+
+	public boolean isOccupied() {
+		
+		return occupied;
 	}
 	
-	public boolean isTaken() {
+	public void takeRole(boolean occupied) {
 		
-		return taken;
+		this.occupied = occupied;
 	}
 	
-	public void setCard(boolean card) {
+	public void setPlayer(Player player) {
 		
-		this.card = card;
+		this.player = player;
 	}
 	
-	public boolean onCard() {
+	public Player getPlayer() {
 		
-		return card;
-	}
-	
-	public void setRank(int rank) {
-		
-		this.rank = rank;
-	}
-	
-	public int getRank() {
-		
-		return rank;
-	}
-	
-	public void setDiceRolls(int currentRoll) {
-		
-		
-	}
-	
-	public void distributeBonusMoney() {
-		
-		
+		return player;
 	}
 }
-
-
-
