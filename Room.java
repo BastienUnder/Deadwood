@@ -1,29 +1,32 @@
 import java.util.*;
 public class Room{
-	
-	private int shots; 
-	private String name; 
-	private ArrayList<Room> adjacentRooms; 
-	
-	public Room() { 
+
+	private String name;
+	private ArrayList<Room> adjacentRooms;
+	private ArrayList<String> adjacentRoomNames;
+
+	public Room() {
+		
 		
 	}
-	
-	public Room(String name) {
-		
-		this.name = name;
-	}
-	
+
 	public String getName() {
 		
 		return name;
 	}
-	
-	public int getShotTokens() {
-		
-		return shots;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
+	public ArrayList<String> getAdjacentRoomNames() {
+		return adjacentRoomNames;
+	}
+
+	public void setAdjacentRoomNames(ArrayList<String> adjacentRoomNames) {
+		this.adjacentRoomNames = adjacentRoomNames;
+	}
+
 	public void setAdjacentRooms(ArrayList<Room> adjacentRooms) {
 		
 		this.adjacentRooms = adjacentRooms; 
@@ -36,18 +39,8 @@ public class Room{
 	
 	
 	
+	
+	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
