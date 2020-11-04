@@ -38,6 +38,7 @@ public class XMLParser {
 
         Element root = d.getDocumentElement();
         ArrayList<Room> rooms = new ArrayList<>();
+        //ArrayList<Set> sets = new ArrayList<>();
 
 
         NodeList setRooms = root.getElementsByTagName("set");
@@ -92,7 +93,7 @@ public class XMLParser {
                             numTakes++;
                         }
                     }
-
+                    //System.out.println("Room Name: " + name);
                     //System.out.println("TAKES: " + numTakes);
                 }
 
@@ -119,6 +120,7 @@ public class XMLParser {
             //CREATE THE NEW SET OBJECT.
             Set newSet = new Set(name, numTakes, roles, neighbors);
             rooms.add(newSet);
+            //sets.add(newSet);
 
         }//end loop creating all the Set objects
 

@@ -10,6 +10,23 @@ public class CastingOffice extends Room{
 
     }
 
+    public void printUpgrades(){
+        for(int i=0; i<upgrades.size();i++){
+            Upgrade values = upgrades.get(i);
+            System.out.println("Rank " + values.getRank() + " costs " + + values.getAmount() + " " + values.getCurrency() + "s");
+        }
+    }
+
+    public int getUpgradePrice(int rank, String currency){
+        for(int i=0; i<upgrades.size(); i++){
+            Upgrade upgrade = upgrades.get(i);
+            if(rank == upgrade.getRank() && currency.equals(upgrade.getCurrency())){
+                return upgrade.getAmount();
+            }
+        }
+        return 100;
+    }
+
 
     //Getters and Setters
     public void setUpgrades(ArrayList<Upgrade> upgrades) {

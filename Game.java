@@ -53,14 +53,8 @@ public class Game {
 		}
 	}
 	
-	
-	public void wrapScene() {
-		
-		
-		
-	}
-	
-	
+
+
 	public void setPlayers() {
 		
 		int startingRank = 1; 
@@ -98,7 +92,7 @@ public class Game {
 		for(int i = 0; i < numberOfPlayers; i++) {
 		
 		players.add(new Player("Player " + (i + 1), 
-				board.getRooms().get("trailer"), 6, startingCredits, 0));
+				board.getRooms().get("trailer"), startingRank, startingCredits, 0));
 		}
 	}
 }

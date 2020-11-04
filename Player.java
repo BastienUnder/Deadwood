@@ -6,6 +6,7 @@ public class Player {
 	private boolean turn;
 	private boolean working;
 	private boolean moved;
+	private int rehearseTokens = 0;
 
 	private int rank;
 	private int dollars;
@@ -23,6 +24,18 @@ public class Player {
 	}
 
 	//Getters and Setters
+	public int getRehearseTokens() {
+		return rehearseTokens;
+	}
+
+	public void addOneRehearseToken(){
+		rehearseTokens++;
+	}
+
+	public void setRehearseTokens(int rehearseTokens) {
+		this.rehearseTokens = rehearseTokens;
+	}
+
 	public void setPosition(Room room) {
 		
 		this.room = room;
