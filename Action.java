@@ -3,6 +3,8 @@ public class Action {
 
 	public Scanner scanner = new Scanner(System.in);
 	private boolean endTurn = false;
+	private int scenesLeftInDay = 10;
+	private ArrayList<Player> players = new ArrayList<Player>();
 
 	public void move(Player player, String roomName) {
 
@@ -27,9 +29,10 @@ public class Action {
 
 				if(roomName.equals(adjacentRooms.get(i).getName())) {
 
+					System.out.print("Moved from \"" + player.getRoom().getName() + "\" ");
 					player.setPosition(adjacentRooms.get(i));
 					player.setMoved(true);
-					System.out.println("Moved: \"" + player.getRoom().getName() + "\"");
+					System.out.println("to \"" + player.getRoom().getName() + "\"");
 
 					//if(!(roomName.equals("office"))){
 						//Set set = (Set) player.getRoom();
@@ -235,8 +238,16 @@ public class Action {
 		}
 
 		else if(optionArray[0].equals("where")) {
-
-			System.out.println("\"" + player.getRoom().getName() + "\"");
+			if(optionArray.length > 1 && optionArray[1].equals("all")){
+				for(int i=0; i<players.size(); i++){
+					Player tempPlayer = players.get(i);
+					System.out.println(tempPlayer.getName() + " is in the \"" + tempPlayer.getRoom().getName() + "\"");
+				}
+				System.out.println("The active player is " + player.getName());
+			}
+			else {
+				System.out.println("\"" + player.getRoom().getName() + "\"");
+			}
 		}
 
 		else if(optionArray[0].equals("move")) {
@@ -282,8 +293,8 @@ public class Action {
 				ArrayList<Role> roles = set.getRoles();
 
 				if(set.getShotCount() <= 0) {
+					System.out.println("No roles available in the " + set.getName());
 
-					System.out.println("No roles available, the scene has wrapped.");
 				}
 
 				else {
@@ -339,7 +350,9 @@ public class Action {
 		else if(optionArray[0].equals("rehearse")){
 
 			if(player.isWorking()) {
+				System.out.println("Player recieved one token from rehearsing.");
 				player.addOneRehearseToken();
+				setEndTurn(true);
 			}
 			else {
 
@@ -412,6 +425,7 @@ public class Action {
 		}
 
 		freeRoles(player);
+		scenesLeftInDay--;
 	}
 
 	public boolean checkCard(Player player) {
@@ -469,5 +483,21 @@ public class Action {
 	public void setEndTurn(boolean endTurn) {
 
 		this.endTurn = endTurn;
+	}
+
+	public int getScenesLeftInDay() {
+		return scenesLeftInDay;
+	}
+
+	public void setScenesLeftInDay(int scenesLeftInDay) {
+		this.scenesLeftInDay = scenesLeftInDay;
+	}
+
+	public ArrayList<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(ArrayList<Player> players) {
+		this.players = players;
 	}
 }

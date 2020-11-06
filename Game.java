@@ -23,6 +23,7 @@ public class Game {
 		
 		board = new Board();
 		setPlayers();
+		actions.setPlayers(players);
 
 		System.out.println("Welcome to Deadwood! Type \"help\" to see options.");
 		while(daysLeft != 0) {
@@ -31,7 +32,7 @@ public class Game {
 			board.resetBoard();
 			scanner.nextLine();
 			
-			while(!(dayOver)) {
+			while(actions.getScenesLeftInDay() > 1) {
 				
 				for (int i = 0; i < players.size(); i++) {
 
@@ -50,7 +51,12 @@ public class Game {
 			}
 			
 			daysLeft--;
+			//Call board routine to setup a new day with new scene cards and shot tokens replaced, players returned to trailers and starting on the proper player's turn.
+			System.out.println("Welcome to day " + daysLeft + "\n");
 		}
+
+		//Call end game and scoring routine:
+		System.out.println("GAME OVER");
 	}
 	
 
