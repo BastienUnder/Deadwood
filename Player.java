@@ -11,6 +11,7 @@ public class Player {
 	private int rank;
 	private int dollars;
 	private int credits;
+	private int score;
 	
 	private Role role;
 	
@@ -126,5 +127,14 @@ public class Player {
 		role = null;
 	}
 	
+	public void setScore(int score) {
+		
+		this.score = score;
+	}
+	
+	public int getScore() {
+		
+		return score;
+	}
 	
 }

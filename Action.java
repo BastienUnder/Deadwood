@@ -413,7 +413,7 @@ public class Action {
 			}
 
 			for(int i = 0; i < set.getRoles().size(); i++) {
-				System.out.println(set.getRoles().size());
+				
 				if((set.getRoles().get(i).isOccupied()) &&
 						(!(set.getRoles().get(i).isOnCard()))) {
 
@@ -456,6 +456,7 @@ public class Action {
 
 				roles.get(i).getPlayer().setWorking(false);
 				roles.get(i).getPlayer().setMoved(false);
+				roles.get(i).getPlayer().setRehearseTokens(0);
 			}
 		}
 	}

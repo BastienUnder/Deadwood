@@ -84,9 +84,33 @@ public class Board extends Room{
 		}
 	}
 
-	public void resetBoard(){
+	public void resetBoard(ArrayList<Player> players){
 
 		resetScenes();
+		
+		for(int i = 0; i < players.size(); i++) {
+			
+			players.get(i).setPosition(rooms.get("trailer"));
+		}
+	
+		for(int i = 0; i < roomsList.size(); i++) { 
+			
+			if(!(roomsList.get(i).getName().equals("office")) &&
+					(!(roomsList.get(i).getName().equals("trailer")))) {
+				
+				Set set = (Set) roomsList.get(i);
+				if(set.getName().equals("Main Street")) set.setShotCount(3);
+				else if(set.getName().equals("Saloon")) set.setShotCount(2);
+				else if(set.getName().equals("Jail")) set.setShotCount(1);
+				else if(set.getName().equals("General Store")) set.setShotCount(2);
+				else if(set.getName().equals("Train Station")) set.setShotCount(3);
+				else if(set.getName().equals("Hotel")) set.setShotCount(3);
+				else if(set.getName().equals("Bank")) set.setShotCount(1);
+				else if(set.getName().equals("Church")) set.setShotCount(2);
+				else if(set.getName().equals("Ranch")) set.setShotCount(2);
+				else if(set.getName().equals("Secret Hideout")) set.setShotCount(3);
+			}
+		}
 	}
 
 	public void resetScenes(){
